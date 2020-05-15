@@ -1,10 +1,8 @@
-sudo apt-get install postgresql
+sudo apt-get install -y postgresql nginx python3
 sudo -u postgres psql -c "CREATE ROLE demo PASSWORD 'password'"
 sudo -u postgres psql -c "CREATE DATABASE demo"
-sudo apt-get install nginx
 sudo cp nginx.conf /etc/nginx/sites-available/demo.conf
 sudo ln -s /etc/nginx/sites-available/demo.conf /etc/nginx/sites-enabled/demo.conf
-sudo apt-get install python3
 curl -O https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 sudo pip3 install -r requirements.txt supervisor
